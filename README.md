@@ -26,6 +26,14 @@ Limpiar el dataset y responder preguntas de negocio: cuánto se vende, cuándo, 
 ## Estructura del proyecto
 
 ```
+├── .streamlit/
+│   └── config.toml                # Tema de la app
+├── app/
+│   ├── streamlit_app.py           # App interactiva
+│   ├── data.py                    # Limpieza y cálculos (mismo pipeline del notebook)
+│   ├── charts.py                  # Gráficos Plotly
+│   ├── theme.py                   # Tokens de diseño y estilos
+│   └── formato.py                 # Formato de números y fechas en español
 ├── data/                          # Dataset original
 ├── notebooks/
 │   └── 01_eda_online_retail.ipynb # Análisis completo
@@ -51,6 +59,11 @@ Limpiar el dataset y responder preguntas de negocio: cuánto se vende, cuándo, 
 - Análisis de devoluciones.
 - Concentración de clientes (Pareto).
 
+**Estadística (secciones 24 a 26)**
+- Correlaciones de Pearson entre variables de cliente (mapa de calor) y diagrama de dispersión frecuencia vs gasto.
+- Prueba de hipótesis con correlación de Spearman.
+- Distribución del gasto por cliente comparada con la campana de Gauss.
+
 ## Principales hallazgos
 
 - **Negocio:** £17.129.151 de ingresos, 36.967 facturas y 5.878 clientes. Ticket típico de £303 y 6,3 compras por cliente: perfil mayorista.
@@ -59,10 +72,12 @@ Limpiar el dataset y responder preguntas de negocio: cuánto se vende, cuándo, 
 - **Mercado:** el Reino Unido concentra el 82,6% de los ingresos. El resto viene sobre todo de Europa.
 - **Devoluciones:** representan el 4,9% de los ingresos, y el 43,8% de los clientes devolvió al menos una vez.
 - **Clientes:** el 20% de los clientes genera el 76,9% de los ingresos.
+- **Frecuencia y gasto:** relación fuerte y significativa (Spearman rho = 0,86, p < 0,001). Fomentar compras recurrentes es clave.
+- **Distribución:** el gasto por cliente es log-normal y muy asimétrico (asimetría 25,83; en escala log 0,23), por eso se usaron mediana y Spearman.
 
 ## Tecnologías
 
-Python, pandas, NumPy, Matplotlib, Seaborn y Jupyter Notebook.
+Python, pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly, Streamlit y Jupyter Notebook.
 
 ## Cómo ejecutarlo
 
@@ -72,6 +87,16 @@ cd Proyecto_EDA_Exploratory_Data_Analysis_Franco
 pip install -r requirements.txt
 jupyter notebook notebooks/01_eda_online_retail.ipynb
 ```
+
+## App interactiva
+
+Una página con seis pestañas (ventas, productos, mercado, devoluciones, clientes y estadística) y filtros por país y rango de fechas en la barra lateral. La app repite la limpieza del notebook y calcula todos los valores en vivo: no guarda ningún número fijo. Con los filtros vacíos, los resultados coinciden con los del notebook.
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+Se abre en `http://localhost:8501`. El diseño (colores, tipografías y bordes rectos) está definido en `.streamlit/config.toml` y `app/theme.py`.
 
 ## Autor
 
