@@ -1,0 +1,32 @@
+# Tema: sistema de diseño "Franco Recabarren" (cyber brutalista, claro).
+# Claves verificadas contra Streamlit 1.66.1 con `streamlit config show`.
+[theme]
+base = "light"
+primaryColor = "#6b3df5"
+backgroundColor = "#f2f2ef"
+secondaryBackgroundColor = "#fafaf8"
+textColor = "#0a0a0a"
+borderColor = "#b9b9b4"
+linkColor = "#6b3df5"
+blueColor = "#6b3df5"
+
+# JetBrains Mono para interfaz, etiquetas y datos; Anton para títulos.
+font = "JetBrains Mono:https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+codeFont = "JetBrains Mono:https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+headingFont = "Anton:https://fonts.googleapis.com/css2?family=Anton&display=swap"
+headingFontWeights = [400, 400, 400, 400, 400, 400]
+metricValueFontSize = "1.75rem"
+metricValueFontWeight = 400
+
+# Radio 0, bordes de 1px, sin sombras ni degradados.
+baseRadius = "none"
+buttonRadius = "none"
+showWidgetBorder = true
+showSidebarBorder = true
+
+chartCategoricalColors = ["#6b3df5", "#0a0a0a", "#5c5c58"]
+
+[theme.sidebar]
+backgroundColor = "#fafaf8"
+secondaryBackgroundColor = "#f2f2ef"
+borderColor = "#b9b9b4"
