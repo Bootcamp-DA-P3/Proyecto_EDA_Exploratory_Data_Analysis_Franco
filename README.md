@@ -37,7 +37,7 @@ Limpiar el dataset y responder preguntas de negocio: cuánto se vende, cuándo, 
 ├── data/                          # Dataset original
 ├── notebooks/
 │   └── 01_eda_online_retail.ipynb # Análisis completo
-├── reports/                       # Reportes y gráficos
+├── reports/                       # Reporte ejecutivo (HTML y PDF) y gráficos
 ├── requirements.txt
 └── README.md
 ```
@@ -75,6 +75,10 @@ Limpiar el dataset y responder preguntas de negocio: cuánto se vende, cuándo, 
 - **Frecuencia y gasto:** relación fuerte y significativa (Spearman rho = 0,86, p < 0,001). Fomentar compras recurrentes es clave.
 - **Distribución:** el gasto por cliente es log-normal y muy asimétrico (asimetría 25,83; en escala log 0,23), por eso se usaron mediana y Spearman.
 
+## Reporte ejecutivo
+
+Resumen de los hallazgos para negocio en `reports/reporte_ejecutivo.pdf` (versión web en `reports/reporte_ejecutivo.html`).
+
 ## Tecnologías
 
 Python, pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly, Streamlit y Jupyter Notebook.
@@ -84,6 +88,8 @@ Python, pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly, Streamlit y Jupyter N
 ```bash
 git clone <url-del-repositorio>
 cd Proyecto_EDA_Exploratory_Data_Analysis_Franco
+python -m venv .venv
+.venv\Scripts\activate        # en macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 jupyter notebook notebooks/01_eda_online_retail.ipynb
 ```

@@ -33,7 +33,8 @@
   .label { font-family: var(--mono); font-weight: 500; font-size: 9pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--violet); }
   .kicker { font-family: var(--mono); font-weight: 500; font-size: 11pt; letter-spacing: 0.04em; text-transform: uppercase; color: var(--violet); margin: var(--space-2) 0 var(--space-4); }
   h1, h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; margin: 0; }
-  h2 { font-size: 34pt; line-height: 0.95; margin: var(--space-1) 0 0; }
+  h2 { font-size: 34pt; line-height: 1.1; margin: var(--space-2) 0 0; }
+  h2 + ul { margin-top: var(--space-4); }
   h3 { font-family: var(--mono); font-weight: 700; font-size: 9.5pt; letter-spacing: 0.08em; text-transform: uppercase; margin: var(--space-6) 0 var(--space-2); }
   section { border-top: 1px solid var(--line); padding-top: var(--space-4); margin-top: var(--space-6); }
   section:first-of-type { margin-top: 0; }
@@ -64,7 +65,7 @@
   /* Portada */
   .cover { display: flex; flex-direction: column; justify-content: space-between; }
   .cover .brand { font-family: var(--mono); font-weight: 700; font-size: 11pt; letter-spacing: 0.08em; }
-  .cover h1 { font-size: 64pt; line-height: 1.05; margin: var(--space-4) 0; }
+  .cover h1 { font-size: 64pt; line-height: 1.2; margin: var(--space-4) 0; }
   .cover .grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1.5px solid var(--ink); }
   .cover .grid div { padding: var(--space-2) 0; font-family: var(--mono); font-size: 8.5pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); }
   .cover .grid div b { display: block; color: var(--ink); font-weight: 500; }
@@ -179,8 +180,8 @@
       <img src="figures/top_devoluciones.png" alt="Top productos devueltos">
       <div class="caption">Top 10 productos por monto devuelto</div>
     </div>
-    <p>Se devolvieron <b>£839.160, el 4,9% de los ingresos</b>, en 7.899 facturas. Las devoluciones son solo el 2,30% de las filas pero pesan el doble en dinero: se devuelven líneas de más valor que la venta promedio.</p>
-    <p>La práctica es habitual: <b>el 43,8% de los clientes</b> devolvió al menos una vez. Los dos productos más devueltos son también los dos más vendidos: se devuelven más porque se venden más.</p>
+    <p>Se devolvieron <b>£839.160, el 4,9% de los ingresos</b>, en 7.899 facturas. Las devoluciones son solo el 2,30% de las filas, pero en dinero pesan más: se devuelven líneas de más valor que la venta promedio.</p>
+    <p>La práctica es habitual: <b>el 43,8% de los clientes</b> devolvió al menos una vez. Los dos productos más devueltos son también los dos con más ingresos: se devuelven más porque se venden más.</p>
   </section>
   <div class="statusbar"><span>/06</span><span>FRANCO_R · EDA ONLINE RETAIL II</span></div>
 </div>
@@ -247,7 +248,7 @@
       <img src="figures/distribucion_gasto.png" alt="Distribución del gasto vs campana de Gauss">
       <div class="caption">Gasto por cliente vs campana de Gauss · escala normal y logarítmica</div>
     </div>
-    <p>El gasto por cliente <b>no sigue una campana de Gauss</b>: asimetría de 25,83 y media (£2.914,11) más de tres veces la mediana (£865,40). En escala logarítmica sí se ajusta (asimetría 0,23): una <b>distribución log-normal</b>, habitual en datos de dinero. Por eso se usaron mediana y Spearman.</p>
+    <p>El gasto por cliente <b>no sigue una campana de Gauss</b>: asimetría de 25,83 y media (£2.914,11) 3,4 veces la mediana (£865,40). En escala logarítmica sí se ajusta (asimetría 0,23): una <b>distribución log-normal</b>, habitual en datos de dinero. Por eso se usaron mediana y Spearman.</p>
   </section>
   <div class="statusbar"><span>/09 — /10</span><span>FRANCO_R · EDA ONLINE RETAIL II</span></div>
 </div>
@@ -267,7 +268,7 @@
     <ul>
       <li>Pocos productos de decoración concentran ingresos y volumen.</li>
       <li>El Reino Unido aporta el 82,6% de los ingresos; el resto viene sobre todo de Europa.</li>
-      <li>Las devoluciones son el 4,9% de los ingresos y siguen a los productos más vendidos.</li>
+      <li>Las devoluciones son el 4,9% de los ingresos y siguen a los productos con más ingresos.</li>
     </ul>
     <h3>[3] Clientes</h3>
     <ul>
