@@ -310,4 +310,8 @@ with tab_estadistica:
             frases[-1] += " El logaritmo acerca la distribución a la campana de Gauss."
         th.insight(*frases)
 
-th.status_bar("Fuente: UCI Machine Learning Repository · Online Retail II")
+th.status_bar(
+    "Fuente: UCI Machine Learning Repository · Online Retail II",
+    link_texto="Franco Recabarren · Portfolio",
+    link_url="https://franco-recabarren.vercel.app/",
+)

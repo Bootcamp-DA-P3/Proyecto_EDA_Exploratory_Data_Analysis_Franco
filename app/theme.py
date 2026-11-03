@@ -91,6 +91,8 @@ CSS = f"""
   max-width: 72ch; margin: 0 0 0.5rem; }}
 .fr-status {{ font-family: {FONT_MONO}; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-muted); border-top: 1px solid var(--line); padding-top: 0.5rem; margin-top: 1rem; }}
+.fr-status a {{ color: var(--violet); text-decoration: none; border-bottom: 1px solid var(--violet); }}
+.fr-status a:hover {{ color: var(--ink); border-color: var(--ink); }}
 .fr-signal {{ background: var(--lime); color: var(--on-lime); padding: 1rem; display: flex;
   align-items: baseline; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 1rem; }}
 .fr-signal b {{ font-family: {FONT_DISPLAY}; font-weight: 400; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; }}
@@ -143,9 +145,12 @@ def insight(*frases: str) -> None:
     st.html("".join(f'<p class="fr-insight">{escape(f)}</p>' for f in frases))
 
 
-def status_bar(texto: str) -> None:
-    """Barra de estado mono: "● ..."."""
-    st.html(f'<div class="fr-status">● {escape(texto)}</div>')
+def status_bar(texto: str, link_texto: str | None = None, link_url: str | None = None) -> None:
+    """Barra de estado mono: "● ...". Si se pasa link, agrega un enlace al final."""
+    enlace = ""
+    if link_texto and link_url:
+        enlace = f' · <a href="{escape(link_url)}" target="_blank" rel="noopener">{escape(link_texto)}</a>'
+    st.html(f'<div class="fr-status">● {escape(texto)}{enlace}</div>')
 
 
 def card(nombre: str):
